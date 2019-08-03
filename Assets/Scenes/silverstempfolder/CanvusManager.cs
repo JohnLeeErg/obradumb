@@ -211,7 +211,7 @@ public class CanvusManager : MonoBehaviour
     IEnumerator FadeOutBackGround()
     {
         screenHolder = Instantiate(screens[selected]);
-        for (float ft = 1f; ft >= 0; ft -= 0.1f)
+        for (float ft = 1f; ft >= 0; ft -= 0.05f)
         {
             Color c = background.color;
             c.a = ft;

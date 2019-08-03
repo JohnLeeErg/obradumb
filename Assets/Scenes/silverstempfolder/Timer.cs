@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public Text timerNumber;
     public Image circle;
     private bool flash;
+    public EndGame endGame;
     // Update is called once per frame
     private void Start()
     {
@@ -26,6 +27,11 @@ public class Timer : MonoBehaviour
 
         if (Mathf.Floor(timeLeft / section) < flashing && flash)
             StartCoroutine(alternateFlash());
+
+        if (timeLeft < 0)
+        {
+            endGame.GameOver(0);
+        }
     }
 
     IEnumerator alternateFlash() {
