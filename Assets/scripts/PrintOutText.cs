@@ -7,7 +7,11 @@ public class PrintOutText : MonoBehaviour
 {
     [Tooltip("time it takes to print 1 char")]
     [SerializeField] float printSpeed, startDelay;
-    [SerializeField] char missingLetter;
+   
+    [SerializeField] string missingLetter;
+    [Tooltip("use a time instead of a speed")]
+    [SerializeField] bool timed;
+    [SerializeField] float timeToPrint;
     TextMesh textMeshComp;
     Text textComp; //if you're using ui text
     bool ui;
@@ -17,13 +21,17 @@ public class PrintOutText : MonoBehaviour
     {
         textMeshComp = GetComponent<TextMesh>();
         textComp = GetComponent<Text>();
-
+        
         if (textComp)
         {
             ui = true;
             storedText = textComp.text;
             textComp.text = "";
-
+            if (timed)
+            {
+                printSpeed = timeToPrint / storedText.Length;
+                print(printSpeed);
+            }
             StartCoroutine(PrintText());
         }
         else
@@ -31,6 +39,11 @@ public class PrintOutText : MonoBehaviour
             //otherwise use the text mesh
             storedText = textMeshComp.text;
             textMeshComp.text = "";
+            if (timed)
+            {
+                printSpeed = timeToPrint / storedText.Length;
+                print(printSpeed);
+            }
             StartCoroutine(PrintTextMesh());
         }
 
@@ -42,7 +55,7 @@ public class PrintOutText : MonoBehaviour
         int i = 0;
         while (textMeshComp.text.Length < storedText.Length)
         {
-            if (storedText[i] == missingLetter)
+            if (storedText[i].ToString() == missingLetter)
             {
                 textMeshComp.text += " ";
             }
@@ -60,7 +73,7 @@ public class PrintOutText : MonoBehaviour
         int i = 0;
         while (textComp.text.Length <storedText.Length)
         {
-            if (storedText[i] == missingLetter)
+            if (storedText[i].ToString() == missingLetter)
             {
                 textComp.text += " ";
             }
