@@ -11,14 +11,18 @@ public class CanvusManager : MonoBehaviour
     public Transform listHolder;
     private int selected=-1;
     int isOnList = -1;
-    public Transform screenHolder;
+    public GameObject screenHolder;
     public Button back;
     public Image background;
     public Image strike;
     public bool strikeSelected;
 
+    public GameObject[] screens;
+
     private void Start()
     {
+        print( Screen.width);
+        textMoveSpeed = textMoveSpeed* (Screen.width/400);
         back.GetComponent<Button>().interactable = false;
     }
 
@@ -202,11 +206,11 @@ public class CanvusManager : MonoBehaviour
             background.color = c;
             yield return new WaitForSeconds(textFadeSpeed);
         }
-        screenHolder.GetChild(selected).gameObject.SetActive(false);
+        Destroy(screenHolder);
     }
     IEnumerator FadeOutBackGround()
     {
-        screenHolder.GetChild(selected).gameObject.SetActive(true);
+        screenHolder = Instantiate(screens[selected]);
         for (float ft = 1f; ft >= 0; ft -= 0.1f)
         {
             Color c = background.color;
