@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PrintOutText : MonoBehaviour
 {
     [Tooltip("time it takes to print 1 char")]
-    [SerializeField] float printSpeed;
+    [SerializeField] float printSpeed, startDelay;
     [SerializeField] char missingLetter;
     TextMesh textMeshComp;
     Text textComp; //if you're using ui text
@@ -38,6 +38,7 @@ public class PrintOutText : MonoBehaviour
 
     IEnumerator PrintTextMesh()
     {
+        yield return new WaitForSeconds(startDelay);
         int i = 0;
         while (textMeshComp.text.Length < storedText.Length)
         {
@@ -55,6 +56,7 @@ public class PrintOutText : MonoBehaviour
     }
     IEnumerator PrintText()
     {
+        yield return new WaitForSeconds(startDelay);
         int i = 0;
         while (textComp.text.Length <storedText.Length)
         {
