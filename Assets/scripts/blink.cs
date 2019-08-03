@@ -6,11 +6,12 @@ public class blink : MonoBehaviour
 {
     TextMesh textComp;
     [SerializeField] float blinkSpeed = 1;//seconds
-
+    string startText;
     // Start is called before the first frame update
     void Start()
     {
         textComp = GetComponent<TextMesh>();
+        startText = textComp.text;
         StartCoroutine(blinkText());
     }
 
@@ -20,7 +21,7 @@ public class blink : MonoBehaviour
         {
             textComp.text = " ";
             yield return new WaitForSeconds(blinkSpeed);
-            textComp.text = "|";
+            textComp.text = startText;
 
             yield return new WaitForSeconds(blinkSpeed);
         }
