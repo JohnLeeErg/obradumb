@@ -19,7 +19,8 @@ public class TetrisControls : MonoBehaviour
         } else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             transform.Translate(Vector3.right,Space.World);
-        } else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        }
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             transform.Rotate(new Vector3(0, 0, 90));
         }

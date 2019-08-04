@@ -14,7 +14,8 @@ public class Entrances : MonoBehaviour
     enum entrances
     {
         swoop,
-        appear
+        appear,
+        orbit
 
     }
     [SerializeField] float delay;
@@ -29,6 +30,9 @@ public class Entrances : MonoBehaviour
                 break;
             case entrances.appear:
                 StartCoroutine(Appear());
+                break;
+            case entrances.orbit:
+                StartCoroutine(Orbit());
                 break;
         }
       
@@ -50,6 +54,18 @@ public class Entrances : MonoBehaviour
         {
             transform.position = Vector3.Lerp(start.position, target.position, swoopCurve.Evaluate(i/time));
             i += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    IEnumerator Orbit()
+    {
+        transform.position = start.position;
+        yield return new WaitForSeconds(delay);
+
+        while (true)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, 1*Time.deltaTime);
+            transform.Translate(Vector3.Cross(transform.position, target.position).normalized*Time.deltaTime);
             yield return new WaitForEndOfFrame();
         }
     }
