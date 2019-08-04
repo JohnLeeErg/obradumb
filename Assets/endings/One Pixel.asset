@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b97b7f727fa407347862566c617ea257, type: 3}
-  m_Name: One Room
+  m_Name: One Pixel
   m_EditorClassIdentifier: 
-  ratingCount: 13
-  rating: 4
-  gameImage: {fileID: 21300000, guid: 3038cf777b5a53a45bb9573c2773cdcb, type: 3}
-  gameTitle: Compact Living
-  quote: '"I''m stuck on level 4, the gator can''t fit.."'
+  ratingCount: 1
+  rating: 3
+  gameImage: {fileID: 21300000, guid: bab6211a2b8b7b34ba662981cc511ff5, type: 3}
+  gameTitle: Onegeon
+  quote: '"A deep and complex roguelike held.."'

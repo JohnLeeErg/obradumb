@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b97b7f727fa407347862566c617ea257, type: 3}
-  m_Name: One Room
+  m_Name: no game end
   m_EditorClassIdentifier: 
-  ratingCount: 13
-  rating: 4
-  gameImage: {fileID: 21300000, guid: 3038cf777b5a53a45bb9573c2773cdcb, type: 3}
-  gameTitle: Compact Living
-  quote: '"I''m stuck on level 4, the gator can''t fit.."'
+  ratingCount: 0
+  rating: 0
+  gameImage: {fileID: 21300000, guid: 986836c3208213349bbc1c2985d28bf7, type: 3}
+  gameTitle: '----'
+  quote: '"I guess only one was too much huh"'
