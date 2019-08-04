@@ -3641,8 +3641,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 320e7c37c38d950489fb4cefdf39be49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 400
-  flashing: 4
+  totalTime: 360
+  flashing: 3
   timerNumber: {fileID: 1620641436}
   circle: {fileID: 1316238052}
   endGame: {fileID: 159002841}
