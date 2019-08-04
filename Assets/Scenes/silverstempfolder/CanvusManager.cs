@@ -22,7 +22,6 @@ public class CanvusManager : MonoBehaviour
 
     private void Start()
     {
-        print(Screen.width);
         textMoveSpeed = textMoveSpeed * (Screen.width / 400);
         back.GetComponent<Button>().interactable = false;
     }
@@ -76,7 +75,6 @@ public class CanvusManager : MonoBehaviour
         isOnList = 1;
         previousPos = listHolder.GetChild(selected).position;
         targetPos = selectedPos.position;
-        print("sell: " + targetPos + ":" + listHolder.GetChild(selected).position);
         StartCoroutine("FadeOut");
         enableButtons(false);
         
@@ -96,6 +94,7 @@ public class CanvusManager : MonoBehaviour
     }
 
     public void GameIsEnding() {
+        Destroy(screenHolder);
         endgame.GameOver(selected);
     }
 
@@ -108,7 +107,6 @@ public class CanvusManager : MonoBehaviour
         }
     }
     IEnumerator FadeToGrey(){
-        print("here");
         for (float ft = 1f; ft >= 0; ft -= 0.1f)
         {
             listHolder.GetChild(selected).GetChild(0).gameObject.GetComponent<Text>().color = Color.Lerp(Color.grey, Color.black, ft);
