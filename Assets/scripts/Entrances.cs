@@ -11,6 +11,7 @@ public class Entrances : MonoBehaviour
     [SerializeField] Transform target, start;
     [SerializeField] AnimationCurve swoopCurve;
     [SerializeField] float time=1;
+    [SerializeField] AudioSource audioRef;
     enum entrances
     {
         swoop,
@@ -24,6 +25,7 @@ public class Entrances : MonoBehaviour
     void Start()
     {
         rendComp = GetComponent<Renderer>();
+        audioRef = GetComponent<AudioSource>();
         switch (startAnim) {
             case entrances.swoop:
                 StartCoroutine(Swoop());
@@ -43,12 +45,22 @@ public class Entrances : MonoBehaviour
         
         yield return new WaitForSeconds(delay);
         rendComp.enabled = true;
+        if (audioRef)
+        {
+            audioRef.pitch = Random.Range(.7f, 1.2f);
+            audioRef.Play();
+        }
         //should have an appear sound
     }
     IEnumerator Swoop()
     {
         transform.position = start.position;
         yield return new WaitForSeconds(delay);
+        if (audioRef)
+        {
+            audioRef.pitch = Random.Range(.7f, 1.2f);
+            audioRef.Play();
+        }
         float i = 0;
         while (i <= time)
         {
@@ -56,6 +68,7 @@ public class Entrances : MonoBehaviour
             i += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        
     }
     IEnumerator Orbit()
     {
