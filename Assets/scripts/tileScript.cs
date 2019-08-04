@@ -11,9 +11,11 @@ public class tileScript : MonoBehaviour
     TextMesh textRef;
     bool currentlyFlipping;
     public static bool midTrans;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         spriteRef = GetComponent<SpriteRenderer>();
         textRef = GetComponentInChildren<TextMesh>(true);
     }
@@ -27,6 +29,8 @@ public class tileScript : MonoBehaviour
             currentlyFlipping = true;
             StartCoroutine(Flip());
             StartCoroutine(matchGameRef.OnClickTile(this));
+            audioSource.pitch = Random.Range(.7f, 1.2f);
+            audioSource.Play();
         }
     }
 

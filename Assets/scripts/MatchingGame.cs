@@ -12,9 +12,11 @@ public class MatchingGame : MonoBehaviour
     List<int> tempList = new List<int>();
     int cardCount;
     tileScript one;
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         Vector3 curPos = transform.position;
         cardCount = gridSize * gridSize;
         grid = new GameObject[cardCount];
@@ -59,6 +61,8 @@ public class MatchingGame : MonoBehaviour
 
             StartCoroutine(tile.Flip());
             one = null;
+            audioSource.pitch = Random.Range(.7f, 1.2f);
+            audioSource.Play();
         }
     }
 }
