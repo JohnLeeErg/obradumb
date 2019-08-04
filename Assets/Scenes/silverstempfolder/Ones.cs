@@ -6,7 +6,13 @@ public class Ones : MonoBehaviour
 {
     public GameObject damage;
     public float lifeSpan, speed, dist;
+    public Camera[] cams;
     public Camera cam;
+    private void Start()
+    {
+        cams = FindObjectsOfType<Camera>();
+        cam = cams[0];
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -14,7 +20,7 @@ public class Ones : MonoBehaviour
     }
 
     IEnumerator BecomingOne() {
-        GameObject dam = Instantiate(damage);
+        GameObject dam = Instantiate(damage,gameObject.transform);
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         print(mousePos.x + ":" + mousePos.y);
         dam.transform.position = cam.ScreenToWorldPoint(new Vector3(mousePos.x-.5f, mousePos.y+ .1f, -1));

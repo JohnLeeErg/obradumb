@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &95871965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2170,6 +2170,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7045520693899970320, guid: c636b876479bf2e41b58c61dbde13173,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c636b876479bf2e41b58c61dbde13173, type: 3}
 --- !u!1 &1062072583
@@ -2321,7 +2326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Simple Matching Game
+  m_Text: Matching Game
 --- !u!222 &1118642978
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3590,10 +3595,19 @@ MonoBehaviour:
   background: {fileID: 1373038440}
   strike: {fileID: 3806139986260475297, guid: ee8d0bf7030ff334aa92925a5589e5a9, type: 3}
   endgame: {fileID: 159002841}
-  trueListHolder: []
+  trueListHolder:
+  - {fileID: 590512804}
+  - {fileID: 1985435690}
+  - {fileID: 761451615}
+  - {fileID: 1168770782}
+  - {fileID: 176749857}
+  - {fileID: 632624272}
+  - {fileID: 1443075539}
+  - {fileID: 986000240}
+  - {fileID: 1685404787}
   screens:
   - {fileID: 7550367842301083969, guid: 5b507dd252ef7314abf6a31b82c43883, type: 3}
-  - {fileID: 8663726621621345772, guid: 887f8db8ae92a5f46aba32938b1af5d3, type: 3}
+  - {fileID: 3349842919806234407, guid: 332566227b7d6c441996b1b923540c85, type: 3}
   - {fileID: 543835526854853275, guid: 641c9246daa7b954aab4ebe77a0dbad2, type: 3}
   - {fileID: 6623715938237159110, guid: 819e4ebf66a95284eb33448f6844be31, type: 3}
   - {fileID: 5506021628340555050, guid: de3a0765556d6584c8b5fad4781b640c, type: 3}
@@ -3990,9 +4004,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'One Room
-
-    Apartment'
+  m_Text: One Room
 --- !u!222 &2104582615
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4071,7 +4083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Haunted \nTypewritter"
+  m_Text: Typewritter
 --- !u!222 &2143826573
 CanvasRenderer:
   m_ObjectHideFlags: 0

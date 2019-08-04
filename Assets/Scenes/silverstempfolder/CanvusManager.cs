@@ -79,7 +79,7 @@ public class CanvusManager : MonoBehaviour
         if (allD) {
             selected = 111;
             GameIsEnding();
-                }
+        }
     }
 
     public void SelectedGame(int n) {
