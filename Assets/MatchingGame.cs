@@ -7,6 +7,7 @@ public class MatchingGame : MonoBehaviour
     [SerializeField] int gridSize;
     [SerializeField] float cardSize;
     [SerializeField] GameObject cardPrefab;
+    [SerializeField] GameObject parent;
     GameObject[] grid;
     List<int> tempList = new List<int>();
     int cardCount;
@@ -21,7 +22,7 @@ public class MatchingGame : MonoBehaviour
         int row = 0;
         for (int i = 0; i < cardCount; i++)
         {
-            grid[i] = Instantiate(cardPrefab, curPos, Quaternion.identity);
+            grid[i] = Instantiate(cardPrefab, curPos, Quaternion.identity, parent.transform);
             col++;
 
             tempList.Add(i + 1);

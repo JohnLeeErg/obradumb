@@ -614,6 +614,7 @@ MonoBehaviour:
   gridSize: 6
   cardSize: 1
   cardPrefab: {fileID: 713099394655271905}
+  parent: {fileID: 713099396040921594}
 --- !u!1 &713099394979311661
 GameObject:
   m_ObjectHideFlags: 0
