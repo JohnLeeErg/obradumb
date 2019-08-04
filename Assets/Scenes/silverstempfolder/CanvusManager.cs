@@ -229,7 +229,6 @@ public class CanvusManager : MonoBehaviour
     }
     IEnumerator FadeOutBackGround()
     {
-         print("here");
         screenHolder = Instantiate(screens[selected]);
         for (float ft = 1f; ft >= 0; ft -= 0.05f)
         {

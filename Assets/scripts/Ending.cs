@@ -13,11 +13,10 @@ public class Ending : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        stars = starParent.GetComponentsInChildren<SpriteRenderer>(true);
-        LoadEnding();
     }
     public void LoadEnding(EndingSettings ending = null)
     {
+        stars = starParent.GetComponentsInChildren<SpriteRenderer>(true);
         if (ending != null)
         {
             endingToPlay = ending;
