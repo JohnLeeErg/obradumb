@@ -17,7 +17,7 @@ public class CanvusManager : MonoBehaviour
     public Image strike;
     public EndGame endgame;
     public GameObject[] trueListHolder;
-  
+    public AudioSource scratch; 
 
     public GameObject[] screens;
 
@@ -52,6 +52,7 @@ public class CanvusManager : MonoBehaviour
 
     public void StrikeOut()
     {
+        scratch.Play();
         int n = selected;
         if (listHolder.GetChild(n).childCount == 1)
         {
