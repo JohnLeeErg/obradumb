@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: TypeWRiter
   m_EditorClassIdentifier: 
   ratingCount: 6
+<<<<<<< HEAD
   rating: 4
   gameImage: {fileID: 21300000, guid: ec7ebd9a6009da743b7125159872936c, type: 3}
+=======
+  rating: 3
+  gameImage: {fileID: 21300000, guid: a042b7aef8965624b944c6d8120a8631, type: 3}
+>>>>>>> JohnLee
   gameTitle: L tt r To Th  dittor
   quote: '"some good ideas but overall it.."'

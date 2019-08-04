@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b97b7f727fa407347862566c617ea257, type: 3}
+  m_Name: one trivia
+  m_EditorClassIdentifier: 
+  ratingCount: 6
+  rating: 2
+  gameImage: {fileID: 21300000, guid: 18d4265467f7dac4d93d532dc2c1b84f, type: 3}
+  gameTitle: Who Knows Won?
+  quote: '"Kinda funny for a sec, but really not.."'
