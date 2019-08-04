@@ -16,6 +16,7 @@ public class CanvusManager : MonoBehaviour
     public Image background;
     public Image strike;
     public EndGame endgame;
+    public GameObject[] trueListHolder;
   
 
     public GameObject[] screens;
@@ -64,9 +65,22 @@ public class CanvusManager : MonoBehaviour
             Destroy(listHolder.GetChild(n).GetChild(1).gameObject);
             StartCoroutine(FadeToBlack());
         }
+        CheckIfFinished();
         Back();
     }
 
+    private void CheckIfFinished() {
+        bool allD = true;
+        for (int i = 0; i < trueListHolder.Length; i++)
+        {
+            if (trueListHolder[i].transform.childCount != 2)
+                allD = false;
+        }
+        if (allD) {
+            selected = 111;
+            GameIsEnding();
+                }
+    }
 
     public void SelectedGame(int n) {
         if (listHolder.GetChild(n).childCount > 1)

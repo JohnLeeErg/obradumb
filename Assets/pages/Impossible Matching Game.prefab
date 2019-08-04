@@ -1972,6 +1972,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Match Card
       objectReference: {fileID: 0}
+    - target: {fileID: 5419472184242275719, guid: e4c0264f823aea2419e42aa36dbdaf08,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5419472184242275718, guid: e4c0264f823aea2419e42aa36dbdaf08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2026,11 +2031,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5419472184242275719, guid: e4c0264f823aea2419e42aa36dbdaf08,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5419472183188679682, guid: e4c0264f823aea2419e42aa36dbdaf08,
         type: 3}

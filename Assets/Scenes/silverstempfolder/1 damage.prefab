@@ -233,7 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8663726621621345775}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: 1 damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1021,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   printSpeed: 0.01
-  startDelay: 4
+  startDelay: 4.5
   missingLetter: 
   timed: 0
   timeToPrint: 0
