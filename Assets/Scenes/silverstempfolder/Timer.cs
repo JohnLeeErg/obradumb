@@ -11,12 +11,13 @@ public class Timer : MonoBehaviour
     public Image circle;
     private bool flash;
     public EndGame endGame;
+    public float totalHours;
     // Update is called once per frame
     private void Start()
     {
         flash = true;
         timeLeft = totalTime;
-        section = totalTime / 48;
+        section = totalTime / totalHours;
     }
 
     void Update()

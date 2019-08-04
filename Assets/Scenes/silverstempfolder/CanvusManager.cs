@@ -9,20 +9,21 @@ public class CanvusManager : MonoBehaviour
     private Vector3 previousPos, targetPos;
     public float textMoveSpeed, textFadeSpeed;
     public Transform listHolder;
-    private int selected=-1;
+    private int selected = -1;
     int isOnList = -1;
-    public GameObject screenHolder;
-    public Button back;
+    private GameObject screenHolder;
+    public Button back, check, x;
     public Image background;
     public Image strike;
-    public bool strikeSelected;
+    public EndGame endgame;
+  
 
     public GameObject[] screens;
 
     private void Start()
     {
-        print( Screen.width);
-        textMoveSpeed = textMoveSpeed* (Screen.width/400);
+        print(Screen.width);
+        textMoveSpeed = textMoveSpeed * (Screen.width / 400);
         back.GetComponent<Button>().interactable = false;
     }
 
@@ -39,7 +40,7 @@ public class CanvusManager : MonoBehaviour
                     StartCoroutine("FadeInBack");
                     StartCoroutine("FadeOutBackGround");
                 }
-                else if(isOnList==0)
+                else if (isOnList == 0)
                 {
                     //text returned to list
                     StartCoroutine("FadeIn");
@@ -49,8 +50,9 @@ public class CanvusManager : MonoBehaviour
         }
     }
 
-    private void StrikeOut(int n)
+    public void StrikeOut()
     {
+        int n = selected;
         if (listHolder.GetChild(n).childCount == 1)
         {
             selected = n;
@@ -63,31 +65,26 @@ public class CanvusManager : MonoBehaviour
             Destroy(listHolder.GetChild(n).GetChild(1).gameObject);
             StartCoroutine(FadeToBlack());
         }
+        Back();
     }
 
+
     public void SelectedGame(int n) {
-
-        if (strikeSelected)
-        {
-            StrikeOut(n);
+        if (listHolder.GetChild(n).childCount > 1)
             return;
-        }
-        else if (listHolder.GetChild(n).childCount>1)
-            return;
-
         selected = n;
         isOnList = 1;
         previousPos = listHolder.GetChild(selected).position;
         targetPos = selectedPos.position;
-        print("sell: " + targetPos+":"+ listHolder.GetChild(selected).position);
+        print("sell: " + targetPos + ":" + listHolder.GetChild(selected).position);
         StartCoroutine("FadeOut");
-        //fade in game stuff;
         enableButtons(false);
+        
     }
 
     private void enableButtons(bool t)
     {
-        for (int i = 0; i < listHolder.childCount; i++)
+        for (int i = 0; i < listHolder.childCount; i++)  
             listHolder.GetChild(i).GetComponent<Button>().interactable = t;
     }
 
@@ -96,6 +93,10 @@ public class CanvusManager : MonoBehaviour
         isOnList = 0;
         StartCoroutine("FadeOutBack");
         StartCoroutine("FadeInBackGround");
+    }
+
+    public void GameIsEnding() {
+        endgame.GameOver(selected);
     }
 
     IEnumerator FadeToBlack()
@@ -174,9 +175,9 @@ public class CanvusManager : MonoBehaviour
     {
         for (float ft = 0f; ft < 1; ft += 0.1f)
         {
-            Color c = back.transform.GetChild(0).gameObject.GetComponent<Text>().color;
+            Color c = back.GetComponent<Image>().color;
             c.a = ft;
-            back.transform.GetChild(0).gameObject.GetComponent<Text>().color = c;
+            back.GetComponent<Image>().color = c;
             yield return new WaitForSeconds(textFadeSpeed);
         }
         back.GetComponent<Button>().interactable = true;
@@ -185,31 +186,38 @@ public class CanvusManager : MonoBehaviour
     {
         for (float ft = 1f; ft >= 0; ft -= 0.1f)
         {
-                Color c = back.transform.GetChild(0).gameObject.GetComponent<Text>().color;
+                Color c = back.GetComponent<Image>().color;
                 c.a = ft;
-                back.transform.GetChild(0).gameObject.GetComponent<Text>().color = c;
+            back.GetComponent<Image>().color = c;
             yield return new WaitForSeconds(textFadeSpeed);
         }
-        Color co = back.transform.GetChild(0).gameObject.GetComponent<Text>().color ;
+        Color co = back.GetComponent<Image>().color ;
         co.a = 0;
-        back.transform.GetChild(0).gameObject.GetComponent<Text>().color = co;
+        back.GetComponent<Image>().color = co;
 
         back.GetComponent<Button>().interactable = false;
     }
 
     IEnumerator FadeInBackGround()
     {
-        for (float ft = 0f; ft < 1; ft += 0.1f)
+        x.interactable = false;
+        check.interactable = false;
+        for (float ft = 0f; ft <= 1; ft += 0.1f)
         {
             Color c = background.color;
             c.a = ft;
             background.color = c;
             yield return new WaitForSeconds(textFadeSpeed);
         }
+        Color co = background.color;
+        co.a = 1;
+        background.color = co;
+
         Destroy(screenHolder);
     }
     IEnumerator FadeOutBackGround()
     {
+         print("here");
         screenHolder = Instantiate(screens[selected]);
         for (float ft = 1f; ft >= 0; ft -= 0.05f)
         {
@@ -221,5 +229,7 @@ public class CanvusManager : MonoBehaviour
         Color co = background.color;
         co.a = 0;
         background.color = co;
+        x.interactable = true;
+        check.interactable = true;
     }
 }
