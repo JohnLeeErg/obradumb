@@ -9,10 +9,12 @@ public class TypeWriterInput : MonoBehaviour
     TextMesh textComp;
     bool firstTimeDone;
     [SerializeField] blink blinkRef;
+    AudioSource audioRef;
     // Start is called before the first frame update
     void Start()
     {
        textComp = GetComponent<TextMesh>();
+        audioRef = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,7 +36,11 @@ public class TypeWriterInput : MonoBehaviour
                 firstTimeDone = true;
             }
             textComp.text+=Input.inputString.Replace('e',' ');
-            
+            if (audioRef)
+            {
+                audioRef.pitch = Random.Range(.7f, 1.2f);
+                audioRef.Play();
+            }
         }
     }
    

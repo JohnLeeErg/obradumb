@@ -13,6 +13,7 @@ public class PrintOutText : MonoBehaviour
     [SerializeField] bool timed;
     [SerializeField] float timeToPrint;
     TextMesh textMeshComp;
+    AudioSource audioRef;
     Text textComp; //if you're using ui text
     bool ui;
     string storedText;
@@ -21,7 +22,9 @@ public class PrintOutText : MonoBehaviour
     {
         textMeshComp = GetComponent<TextMesh>();
         textComp = GetComponent<Text>();
-        
+
+        audioRef = GetComponent<AudioSource>();
+
         if (textComp)
         {
             ui = true;
@@ -62,6 +65,11 @@ public class PrintOutText : MonoBehaviour
             else
             {
                 textMeshComp.text += storedText[i];
+                if (audioRef)
+                {
+                    audioRef.pitch = Random.Range(.7f, 1.2f);
+                    audioRef.Play();
+                }
             }
             i++;
             yield return new WaitForSeconds(printSpeed);
@@ -80,6 +88,11 @@ public class PrintOutText : MonoBehaviour
             else
             {
                 textComp.text += storedText[i];
+                if (audioRef)
+                {
+                    audioRef.pitch = Random.Range(.7f, 1.2f);
+                    audioRef.Play();
+                }
             }
             i++;
             yield return new WaitForSeconds(printSpeed);

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class CarController : MonoBehaviour
 {
+    AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -18,6 +19,14 @@ public class CarController : MonoBehaviour
 
             transform.Translate(Vector3.up *3* Time.deltaTime);
             transform.Rotate(new Vector3(0, 0, 90*Time.deltaTime));
+        }
+        if (Input.anyKeyDown)
+        {
+            audioSource.Play();
+        }
+        if (!Input.anyKey)
+        {
+            audioSource.Stop();
         }
     }
 }
