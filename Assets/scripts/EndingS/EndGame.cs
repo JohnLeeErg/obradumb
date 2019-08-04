@@ -12,7 +12,6 @@ public class EndGame : MonoBehaviour
     public float textFadeSpeed;
     private bool exit = false;
 
-
     private void Update()
     {
         if (exit)
@@ -25,6 +24,7 @@ public class EndGame : MonoBehaviour
 
     public void GameOver(int end)
     {
+        GetComponent<AudioSource>().Play();
         for (int i = 0; i <toDisable.Length; i++)
             toDisable[i].SetActive(false);
 

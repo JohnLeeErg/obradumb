@@ -261,6 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 1
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835525865899770
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835525873231285
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +561,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526100891842
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,6 +696,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526133772423
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +972,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526585091741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,6 +1217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 1
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526750782740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526776034551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1601,6 +1615,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526780022763
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1750,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526813093436
 GameObject:
   m_ObjectHideFlags: 0
@@ -1867,6 +1885,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 1
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835526842193845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,7 +2007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &543835526854853274
 Transform:
   m_ObjectHideFlags: 0
@@ -2683,6 +2703,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
 --- !u!1 &543835527369127249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2846,3 +2868,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightAnswer: 0
+  win: {fileID: 0}
+  lose: {fileID: 0}
