@@ -8,8 +8,10 @@ public class Ones : MonoBehaviour
     public float lifeSpan, speed, dist;
     public Camera[] cams;
     public Camera cam;
+    public AudioSource audio;
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         cams = FindObjectsOfType<Camera>();
         cam = cams[0];
     }
@@ -20,6 +22,7 @@ public class Ones : MonoBehaviour
     }
 
     IEnumerator BecomingOne() {
+        audio.Play();
         GameObject dam = Instantiate(damage,gameObject.transform);
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         print(mousePos.x + ":" + mousePos.y);

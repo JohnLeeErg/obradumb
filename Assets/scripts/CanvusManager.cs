@@ -23,6 +23,7 @@ public class CanvusManager : MonoBehaviour
 
     private void Start()
     {
+        scratch = GetComponent<AudioSource>();
         textMoveSpeed = textMoveSpeed * (Screen.width / 400);
         back.GetComponent<Button>().interactable = false;
     }
