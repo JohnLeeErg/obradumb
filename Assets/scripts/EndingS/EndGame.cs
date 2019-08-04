@@ -16,8 +16,11 @@ public class EndGame : MonoBehaviour
     private void Update()
     {
         if (exit)
-            if (Input.anyKey)
+            if (Input.anyKey||Input.GetMouseButtonDown(0))
+            {
+                print("GG");
                 Application.Quit();
+            }
     }
 
     public void GameOver(int end)
@@ -41,7 +44,7 @@ public class EndGame : MonoBehaviour
             background.color = c;
             yield return new WaitForSeconds(textFadeSpeed);
         }
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         exit = true;
     }
 }

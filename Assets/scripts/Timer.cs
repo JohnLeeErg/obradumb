@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
 
         if (timeLeft < 0)
         {
-            endGame.GameOver(0);
+            endGame.GameOver(10);
         }
     }
 

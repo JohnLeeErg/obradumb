@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &95871965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,6 +696,17 @@ MonoBehaviour:
   background: {fileID: 1373038440}
   endings:
   - {fileID: 11400000, guid: fbe7caeb9e6d14e429382e693c4c99b3, type: 2}
+  - {fileID: 11400000, guid: 3dc30b5c4737d504892e0f74e0c0be0c, type: 2}
+  - {fileID: 11400000, guid: 62b8e98b43c6cc34798ac634e89dd18c, type: 2}
+  - {fileID: 11400000, guid: 0a5dfa68bdafcd04ba1f51154b94b5bf, type: 2}
+  - {fileID: 11400000, guid: 07d4f1a3482d31d4689757a421b18020, type: 2}
+  - {fileID: 11400000, guid: a486d6a9b1485bc48a6045038427fe0e, type: 2}
+  - {fileID: 11400000, guid: 6eb936c0f8be4074d80263eb389f10e6, type: 2}
+  - {fileID: 11400000, guid: 40c039b2ab78a394f90173a63cc25454, type: 2}
+  - {fileID: 11400000, guid: dac732a5cabe3634981342f798bb6102, type: 2}
+  - {fileID: 11400000, guid: eb5082dbaa12f5248bb5a596b3f89288, type: 2}
+  - {fileID: 11400000, guid: c0078f43608d71149bf4b447da1d4220, type: 2}
+  - {fileID: 11400000, guid: 821c0a86dcc4970488a9334fbe347f91, type: 2}
   pageLayout: {fileID: 1206253937}
   textFadeSpeed: 0.05
 --- !u!4 &159002842
@@ -3349,7 +3360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1698089935
 RectTransform:
   m_ObjectHideFlags: 0

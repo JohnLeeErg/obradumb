@@ -25,6 +25,7 @@ public class Ending : MonoBehaviour
         title.text = endingToPlay.gameTitle;
         score.text = endingToPlay.ratingCount.ToString("000");
         gameImage.sprite = endingToPlay.gameImage;
+        starParent.gameObject.SetActive(true);
         for(int i = 0; i < stars.Length; i++)
         {
             if (i < endingToPlay.rating)
@@ -33,6 +34,7 @@ public class Ending : MonoBehaviour
             }
             else
             {
+                print(emptyStar);
                 stars[i].sprite = emptyStar;
             }
         }
